@@ -1,20 +1,21 @@
 /* 6. Write a program to count frequecy of each character of the given string. */
 
-int countFrequency(const char *p){
+int countFrequency(char *p){
     if(!p) return 0;
     
-    int frequency[256] = {0};
+    int freq[256] = {0};
     
     while(*p){
-        frequency[(unsigned char)*p]++;
+        freq[(unsigned char)*p]++;
         p++;
     }
     
-    int *f = frequency;
+    int *f = freq;
     
-    while(f < (frequency+256)){
-        if(*f>0)
-            printf("'%c' - %d\n",f-frequency,*f);
+    while(f<freq+256){
+        if(*f>0){
+            printf("'%c' - %d\n",(unsigned char)(f-freq), *f);
+        }
         f++;
     }
     
