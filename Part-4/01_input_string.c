@@ -12,7 +12,9 @@ int inputString(int size, char (*str)[size], int n){
             if(len>0 && str[i][len-1]=='\n'){
                 str[i][len-1] = '\0';
             }
-        } 
+        }else{
+            *p = '\0';
+        }
     }
     return 1;
 }
@@ -33,6 +35,8 @@ int inputString(int size, char (*str)[size], int n){
             while(*p && *p!='\n') p++;
             
             if(*p=='\n') *p = '\0';
+        }else{
+            *p = '\0';
         }
         str++;
     }
